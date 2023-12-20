@@ -50,7 +50,6 @@ class SinglyLinkedList {
     return tempItem;
   }
 
-
   shift() {
     if (!this.head) return undefined;
     if (!this.head.next) {
@@ -64,22 +63,21 @@ class SinglyLinkedList {
 
     this.head = this.head.next;
     this.length--;
-    
+
     return currentItem;
   }
 
   unshift(value: number) {
-    let newHead = new ListNode(value)
-    if (!this.head){
+    let newHead = new ListNode(value);
+    if (!this.head) {
       this.head = newHead;
       this.tail = this.head;
-    }
-    else {
+    } else {
       newHead.next = this.head;
       this.head = newHead;
     }
     this.length++;
-    return this
+    return this;
   }
 
   get(index: number) {
@@ -91,11 +89,10 @@ class SinglyLinkedList {
     }
 
     return currentItem;
-
   }
 
   set(value: number, index: number) {
-    let searchNode = this.get(index)
+    let searchNode = this.get(index);
     if (!searchNode) return false;
 
     searchNode.value = value;
@@ -109,20 +106,19 @@ class SinglyLinkedList {
     if (index === this.length) return this.append(value);
 
     const newNode = new ListNode(value);
-    let preNode = this.get(index-1)
+    let preNode = this.get(index - 1);
 
     newNode.next = preNode?.next as ListNode;
     preNode!.next = newNode as ListNode;
 
     this.length++;
     return this;
-
   }
 
   remove(index: number) {
-    if(index < 0 || index >= this.length) return -1;
-    if(index === 0) return this.shift();
-    if(index === this.length - 1) return this.pop();
+    if (index < 0 || index >= this.length) return -1;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
 
     const removeNode = this.get(index) as ListNode;
     let preNode = this.get(index - 1);
@@ -131,11 +127,11 @@ class SinglyLinkedList {
     this.length--;
 
     return removeNode;
-  } 
+  }
 
   reverse() {
-    if(!this.head) return null;
-    if(this.length === 1) return this;
+    if (!this.head) return null;
+    if (this.length === 1) return this;
 
     let oldTail = this.tail;
     let oldHead = this.head;
@@ -148,8 +144,8 @@ class SinglyLinkedList {
 
     for (let i = 0; i < this.length; i++) {
       next = node!.next;
-      node!.next = prev!
-      prev = node
+      node!.next = prev!;
+      prev = node;
       node = next;
     }
     this.tail.next = null;
@@ -166,11 +162,11 @@ myList.append(20); */
 
 //console.log(myList);
 
-console.log("POP Item",myList.pop());
-console.log("After POP",myList);
+console.log("POP Item", myList.pop());
+console.log("After POP", myList);
 
-console.log("SHIFT Item",myList.shift());
-console.log("After SHIFT",myList);
+console.log("SHIFT Item", myList.shift());
+console.log("After SHIFT", myList);
 
 console.log(myList.unshift(200));
 
