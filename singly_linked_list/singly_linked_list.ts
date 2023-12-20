@@ -126,7 +126,7 @@ class SinglyLinkedList {
 
     const removeNode = this.get(index) as ListNode;
     let preNode = this.get(index - 1);
-    preNode!.next = preNode!.next?.next as ListNode | null
+    preNode!.next = removeNode.next || null;
 
     this.length--;
 
