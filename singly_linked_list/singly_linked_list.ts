@@ -11,9 +11,7 @@ const head = new ListNode(5);
 head.next = new ListNode(10);
 head.next.next = new ListNode(20);
 
-//console.log(head);
-
-class SinglyLinkedList {
+module.exports = class SinglyLinkedList {
   head: ListNode | null = null;
   tail: ListNode | null = null;
   length: number = 0;
@@ -152,15 +150,15 @@ class SinglyLinkedList {
 
     return this;
   }
-}
+};
 
-const myList = new SinglyLinkedList();
+/* const myList = new SinglyLinkedList();
 myList.append(5);
-/* myList.append(10);
+myList.append(10);
 myList.append(15);
-myList.append(20); */
+myList.append(20);
 
-//console.log(myList);
+console.log(myList);
 
 console.log("POP Item", myList.pop());
 console.log("After POP", myList);
@@ -183,4 +181,4 @@ console.log("After INSERT", myList.insert(500, 1));
 console.log("REMOVED Item", myList.remove(1));
 console.log("After REMOVE", myList);
 
-console.log("After REVERSE", myList.reverse());
+console.log("After REVERSE", myList.reverse()); */
