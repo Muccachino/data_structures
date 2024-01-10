@@ -23,6 +23,7 @@ class WeightedGraph<T, U> {
         let sumOfDist: number
         let nextNode: Edge<T, U>;
 
+        //initialise variables
         this.adjacencyList.forEach((_, key) => {
             if (key === start) {
                 distances[key as string] = 0;
